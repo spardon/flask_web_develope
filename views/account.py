@@ -3,16 +3,16 @@
 from flask import render_template, Blueprint, request
 
 
-profile = Blueprint('account', __name__, template_folder='templates/profile', url_prefix='account')
+profile = Blueprint('account', __name__, url_prefix='/account', template_folder='templates')
 
 
-@profile.route('/login', methods=['GET', 'POST'])
+@profile.route('/login/', methods=['GET', 'POST'])
 def login():
     """
         登陆页面
     """
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('profile/login.html')
 
     if request.method == 'POST':
         pass # 验证账户操作
