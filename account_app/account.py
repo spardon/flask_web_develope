@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
+"""
+    账户相关视图
+"""
 from flask import render_template, Blueprint, request
 
 

@@ -2,8 +2,8 @@
 # -*- coding:utf-8 -*-
 
 from flask import Flask, render_template
-from views.base import base_site
-from views.account import profile
+from home_app.base import base_site
+from account_app.account import profile
 
 app = Flask(__name__)
 
