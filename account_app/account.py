@@ -6,13 +6,13 @@
 from flask import render_template, Blueprint, request
 
 
-profile = Blueprint('account', __name__, url_prefix='/account', template_folder='templates')
+profile = Blueprint('account', __name__, template_folder='templates')
 
 
-@profile.route('/login/', methods=['GET', 'POST'])
-def login():
+@profile.route('/signin/', methods=['GET', 'POST'])
+def signin():
     """
-        登陆页面
+        注册页面
     """
     if request.method == 'GET':
         return render_template('profile/login.html')
