@@ -18,3 +18,10 @@ def login():
         pass # 验证账户操作
 
 
+@profile.route('/sign/', methods=['GET','POST'])
+def sign():
+    """
+        注册页面
+    """
+    if request.method =='GET':
+        return render_template('profile/sign.html')
