@@ -19,3 +19,11 @@ def signin():
 
     if request.method == 'POST':
         pass # 验证账户操作
+
+@profile.route('/userinfo/',methods=['GET','POST'])
+def userinfo():
+    """
+    个人中心页面
+    """
+    if request.method == 'GET':
+        return render_template('profile/profile.html')
