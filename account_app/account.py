@@ -14,8 +14,9 @@ def signin():
     """
         注册页面
     """
+    context = {'title': u'注册'}
     if request.method == 'GET':
-        return render_template('profile/login.html')
+        return render_template('profile/login.html', **context)
 
     if request.method == 'POST':
         pass # 验证账户操作

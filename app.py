@@ -2,21 +2,28 @@
 # -*- coding:utf-8 -*-
 
 from flask import Flask, render_template
-
-from ext import db
-
+from flask_sqlalchemy import SQLAlchemy
+from flask_debugtoolbar import DebugToolbarExtension
 from home_app.base import base_site
 from account_app.account import profile
 
-app = Flask(__name__)
-app.config.from_object('config')
 
-db.init_app(app)
+db = SQLAlchemy()
 
 
-# 注册模块
-app.register_blueprint(base_site)
-app.register_blueprint(profile)
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object('config')
+    db.init_app(app)
+
+    # 注册模块
+    app.register_blueprint(base_site)
+    app.register_blueprint(profile)
+
+    return app
+
+app = create_app()
+toolbar = DebugToolbarExtension(app)
 
 
 if __name__ == '__main__':
